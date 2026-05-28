@@ -1,0 +1,3 @@
+- [Praktikum 1](https://github.com/Bykamri/praktikum-pab/tree/main/afrizal_0133)
+- [Tugas Aktivitas 2](https://github.com/Bykamri/praktikum-pab/tree/main/aktivitas_2)
+- [Praktikum 2](https://github.com/Bykamri/praktikum-pab/commit/23082dc14a79f22962e08e014bb38817dcd6c34a)
