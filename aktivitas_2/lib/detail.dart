@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class DetailScreen extends StatelessWidget {
   final String doctorName;
   final String specialty;
+  final String doctorImage;
 
   const DetailScreen({
     super.key,
     required this.doctorName,
     required this.specialty,
+    required this.doctorImage,
   });
 
   @override
@@ -29,25 +31,42 @@ class DetailScreen extends StatelessWidget {
                 color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Icon(
-                  Icons.person,
-                  size: 150,
-                  color: Color(0xFF1B233A)
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.network(
+                  doctorImage,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return const Center(child: CircularProgressIndicator(strokeWidth: 2));
+                  },
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(
+                        Icons.person,
+                        size: 150,
+                        color: Color(0xFF1B233A)
+                    );
+                  },
+                ),
               ),
             ),
             const SizedBox(height: 25),
+
             Text(
               doctorName,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
+
             Text(
               specialty,
               style: TextStyle(fontSize: 16, color: Colors.grey[700]),
               textAlign: TextAlign.center,
             ),
+
             const Spacer(),
+
             SizedBox(
               width: double.infinity,
               height: 50,

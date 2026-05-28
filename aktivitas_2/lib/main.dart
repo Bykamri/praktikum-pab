@@ -1,3 +1,4 @@
+import 'package:aktivitas_2/profile.dart';
 import 'package:flutter/material.dart';
 import './home.dart';
 
@@ -40,12 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     ),
-    const Center(
-      child: Text(
-        'Halaman Profil Pasien',
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-      ),
-    ),
+    const ProfileScreen()
   ];
 
   void _onItemTapped(int index) {
